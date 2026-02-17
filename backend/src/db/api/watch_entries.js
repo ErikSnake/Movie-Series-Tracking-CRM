@@ -399,7 +399,7 @@ module.exports = class Watch_entriesDBApi {
       },
 
       {
-        model: db.episodes,
+        model: db.episodes, include: [{ model: db.seasons, as: 'season' }],
         as: 'episode',
         
         where: filter.episode ? {
