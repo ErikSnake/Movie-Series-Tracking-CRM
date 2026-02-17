@@ -1,5 +1,3 @@
-
-
 module.exports = {
   production: {
     dialect: 'postgres',
@@ -12,22 +10,23 @@ module.exports = {
     seederStorage: 'sequelize',
   },
   development: {
-    username: 'postgres',
     dialect: 'postgres',
-    password: '',
-    database: 'db_movie___series_tracking_crm',
-    host: process.env.DB_HOST || 'localhost',
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
     logging: console.log,
     seederStorage: 'sequelize',
   },
-    dev_stage: {
-      dialect: 'postgres',
-      username: process.env.DB_USER,
-      password: process.env.DB_PASS,
-      database: process.env.DB_NAME,
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      logging: console.log,
-      seederStorage: 'sequelize',
-    }
+  dev_stage: {
+    dialect: 'postgres',
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    logging: console.log,
+    seederStorage: 'sequelize',
+  }
 };
